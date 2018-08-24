@@ -6,9 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.opengles.GL10;
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.pm.ConfigurationInfo;
 import android.util.Log;

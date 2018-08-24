@@ -49,7 +49,7 @@ find_library( # Sets the name of the path variable.
 target_link_libraries( # Specifies the target library.
                        gltest-lib
                        android # 错误：Error: undefined reference to 'AAssetManager_fromJava'
-                       GLESv2  # 把opengl库文件添加进来
+                       GLESv3  # 把opengl库文件添加进来
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib} )
