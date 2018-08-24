@@ -10,20 +10,27 @@ import android.app.ActivityManager;
 import android.content.pm.ConfigurationInfo;
 import android.util.Log;
 
+import static android.opengl.GLSurfaceView.RENDERMODE_WHEN_DIRTY;
 
 
 public class MainActivity extends AppCompatActivity {
     private final int CONTEXT_CLIENT_VERSION = 3;
     private GLSurfaceView mGLSurfaceView;
+    RendererJNI mRenderer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mGLSurfaceView = new GLSurfaceView(this);
+        mRenderer=new RendererJNI(this);
         if (detectOpenGLES30()) {
+            // 设置OpenGl ES的版本
             mGLSurfaceView.setEGLContextClientVersion(CONTEXT_CLIENT_VERSION);
-            mGLSurfaceView.setRenderer(new RendererJNI(this));
+            // 设置与当前GLSurfaceView绑定的Renderer
+            mGLSurfaceView.setRenderer(mRenderer);
+            // 设置渲染的模式
+            mGLSurfaceView.setRenderMode(RENDERMODE_WHEN_DIRTY);
         } else {
             Log.e("opengles30", "OpenGL ES 3.0 not supported on device.  Exiting...");
             finish();

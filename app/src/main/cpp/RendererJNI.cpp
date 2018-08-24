@@ -110,8 +110,8 @@ JNIEXPORT void JNICALL Java_opengl_panjq_com_opengl_1demo_RendererJNI_glesInit
                     "   fragColor = vec4 ( 1.0, 0.0, 0.0, 1.0 );  \n"
                     "}                                            \n";
 
-    char *pVertexShader = readShaderSrcFile("shader/vs.glsl", g_pAssetManager);
-    char *pFragmentShader = readShaderSrcFile("shader/fs.glsl", g_pAssetManager);
+//    char *pVertexShader = readShaderSrcFile("shader/vs.glsl", g_pAssetManager);
+//    char *pFragmentShader = readShaderSrcFile("shader/fs.glsl", g_pAssetManager);
 
     GLuint vertexShader;
     GLuint fragmentShader;
@@ -119,10 +119,10 @@ JNIEXPORT void JNICALL Java_opengl_panjq_com_opengl_1demo_RendererJNI_glesInit
     GLint linked;
 
     // Load the vertex/fragment shaders
-    //vertexShader = LoadShader ( GL_VERTEX_SHADER, vShaderStr );
-    //fragmentShader = LoadShader ( GL_FRAGMENT_SHADER, fShaderStr );
-    vertexShader = LoadShader ( GL_VERTEX_SHADER, pVertexShader );
-    fragmentShader = LoadShader ( GL_FRAGMENT_SHADER, pFragmentShader );
+    vertexShader = LoadShader ( GL_VERTEX_SHADER, vShaderStr );
+    fragmentShader = LoadShader ( GL_FRAGMENT_SHADER, fShaderStr );
+//    vertexShader = LoadShader ( GL_VERTEX_SHADER, pVertexShader );
+//    fragmentShader = LoadShader ( GL_FRAGMENT_SHADER, pFragmentShader );
 
     // Create the program object
     programObject = glCreateProgram ( );
